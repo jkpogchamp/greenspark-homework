@@ -1,0 +1,40 @@
+.checkbox {
+	border: 2px solid var(--black);
+	border-radius: 4px;
+	cursor: pointer;
+	display: inline-block;
+	height: 18px;
+	position: relative;
+	width: 18px;
+}
+
+.checkbox:hover::before {
+	background-color: var(--overlay-green);
+	border-radius: 50%;
+	content: "";
+	display: block;
+	height: 36px;
+	left: -11px; /* (overlay width 36px - checkbox width 18px / 2) + 2px correction because borders */
+	opacity: .5;
+	position: absolute;
+	top: -11px; /* (overlay height 36px - checkbox height 18px / 2) + 2px correction because borders */
+	width: 36px;
+}
+
+.checkbox-input {
+	display: none;
+}
+
+.checkmark {
+	color: var(--green);
+	display: none;
+	height: 18px;
+	left: -2px;
+	position: absolute;
+	top: -2px;
+	width: 18px;
+}
+
+.checkbox-input:checked + .checkmark {
+	display: block;
+}

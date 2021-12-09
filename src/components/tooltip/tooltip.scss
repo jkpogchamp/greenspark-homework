@@ -1,0 +1,32 @@
+:root {
+	--popper-theme-background-color: var(--beige);
+	--popper-theme-background-color-hover: var(--beige);
+	--popper-theme-text-color: var(--black);
+	--popper-theme-border-width: 0px;
+	--popper-theme-border-style: solid;
+	--popper-theme-border-radius: 6px;
+	--popper-theme-padding: 24px 16px;
+	--popper-theme-box-shadow: var(--box-shadow);
+}
+
+.trigger {
+	cursor: help;
+	flex-shrink: 0;
+	height: 12px;
+	width: 12px;
+}
+
+.inline-block {
+	line-height: 0;
+}
+
+.popper.popper {
+	font-size: 14px;
+	line-height: 18px;
+	max-width: 248px;
+	text-align: center;
+}
+
+.popper.popper p {
+	margin-bottom: 12px;
+}

@@ -1,0 +1,68 @@
+.switch {
+	align-items: center;
+	cursor: pointer;
+	display: inline-flex;
+	position: relative;
+	user-select: none;
+}
+
+.switch__slider {
+	align-items: center;
+	border-radius: 10px;
+	border: 1px solid var(--border-color-switch-slider);
+	box-shadow: var(--box-shadow-switch-inset);
+	height: 20px;
+	position: relative;
+	transition: background-color ease 0.3s;
+	width: 40px;
+}
+
+.switch-input:checked + .switch__slider {
+	background-color: var(--green);
+	box-shadow: none;
+}
+
+.switch-input:checked:disabled + .switch__slider {
+	background-color: var(--border-color-primary);
+	border-color: var(--border-color-primary);
+	opacity: 1;
+}
+
+.switch-input:disabled + .switch__slider {
+	background-color: var(--border-color-primary);
+	border-color: var(--border-color-primary);
+	cursor: not-allowed;
+	opacity: .6;
+}
+
+.switch__slider::after {
+	background-color: var(--beige);
+	border-color: var(--border-color-switch-thumb);
+	border-radius: 50%;
+	box-shadow: var(--box-shadow-switch);
+	content: "";
+	height: 20px;
+	left: -1px;
+	position: absolute;
+	top: -1px;
+	transition: all linear 0.1s;
+	width: 20px;
+}
+
+.switch-input:checked + .switch__slider::after {
+	border-color: var(--green);
+	transform: translateX(20px);
+}
+
+.switch-input:disabled + .switch__slider::after {
+	border: none;
+	opacity: 0.8;
+}
+
+.switch-input {
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+}

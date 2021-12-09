@@ -1,0 +1,9 @@
+<popper v-bind="$attrs" hover open-delay="100" close-delay="250">
+	<!--v-bind="$attrs" is purposely before the other attributes, wanted to hardcode hover open-delay="100" close-delay="250" -->
+	<svg class="trigger">
+		<use href="#info"></use>
+	</svg>
+	<template #content="props">
+		<slot name="content" v-bind="props" />
+	</template>
+</popper>

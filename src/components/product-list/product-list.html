@@ -1,0 +1,71 @@
+<section class="product-list">
+	<h3 class="product-list__title">Per product widgets</h3>
+	<ul class="product-list__list">
+		<li v-for="product in products" key="product.id" class="product-list-card">
+			<div v-bind:class="['product-card__header', product.color]">
+				<svg class="product-card__header-logo">
+					<use href="#logo" />
+				</svg>
+				<div class="product-card__text-wrapper">
+					<p class="product-card__favour-text">This product plants</p>
+					<p class="product-card__product-info">{{ product.amount }} {{ product.type }}</p>
+				</div>
+			</div>
+			<div class="product-card__body">
+				<dl class="product-card__properties">
+					<dd class="product-card__property-key">
+						Link to Public Profile
+						<v-tooltip>
+							<template #content>
+								<p>This widget links directly to your public profile so that you can easily share your impact with your customers. Turn it off here if you do not want the badge to link to it.</p>
+								<a href="#">View Public Profile</a>
+							</template>
+						</v-tooltip>
+					</dd>
+					<dt class="product-card__property-value">
+						<label v-bind:for="'checkbox-' + product.id" class="checkbox">
+							<input v-model="model" v-bind:id="'checkbox-' + product.id" type="checkbox" v-bind:name="'checkbox-' + product.id" v-bind:value="'checkbox-value' + product.id" class="checkbox-input">
+							<svg class="checkmark">
+								<use href="#checkmark" />
+							</svg>
+						</label>
+					</dt>
+				</dl>
+				<dl class="product-card__properties">
+					<dd class="product-card__property-key">Badge colour</dd>
+					<dt class="product-card__property-value">
+						<label v-bind:for="'color-blue-'+ product.id" class="color-picker blue">
+							<input v-model="product.color" v-bind:id="'color-blue-'+ product.id" v-bind:name="'color-picker-' + product.id" type="radio" class="color-picker-input" value="blue">
+							<span class="color-picker__frame"></span>
+						</label>
+						<label v-bind:for="'color-green-'+ product.id" class="color-picker green">
+							<input v-model="product.color" v-bind:id="'color-green-'+ product.id" v-bind:name="'color-picker-' + product.id" type="radio" class="color-picker-input" value="green">
+							<span class="color-picker__frame"></span>
+						</label>
+						<label v-bind:for="'color-pastel-'+ product.id" class="color-picker pastel">
+							<input v-model="product.color" v-bind:id="'color-pastel-'+ product.id" v-bind:name="'color-picker-' + product.id" type="radio" class="color-picker-input" value="pastel">
+							<span class="color-picker__frame"></span>
+						</label>
+						<label v-bind:for="'color-ice-white-'+ product.id" class="color-picker ice-white">
+							<input v-model="product.color" v-bind:id="'color-ice-white-'+ product.id" v-bind:name="'color-picker-' + product.id" type="radio" class="color-picker-input" value="ice-white">
+							<span class="color-picker__frame"></span>
+						</label>
+						<label v-bind:for="'color-black-'+ product.id" class="color-picker black">
+							<input v-model="product.color" v-bind:id="'color-black-'+ product.id" v-bind:name="'color-picker-' + product.id" type="radio" class="color-picker-input black" value="black">
+							<span class="color-picker__frame"></span>
+						</label>
+					</dt>
+				</dl>
+				<dl class="product-card__properties">
+					<dd class="product-card__property-key">Activate badge</dd>
+					<dt class="product-card__property-value">
+						<label v-bind:for="'switch-' + product.id" class="switch">
+							<input v-model="model" v-bind:id="'switch-' + product.id" v-bind:name="'switch-' + product.id" type="checkbox" v-bind:value="'switch-value' + product.id" class="switch-input">
+							<span class="switch__slider"></span>
+						</label>
+					</dt>
+				</dl>
+			</div>
+		</li>
+	</ul>
+</section>
